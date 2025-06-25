@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Public Management OS</title>
+    
+    <!-- Chosen Palette: Serene Professional -->
+    <!-- Application Structure Plan: A single-page application with a fixed sidebar navigation for quick access to different policy sections. The main content is presented in a single, readable column. This structure was chosen because a privacy policy is a text-heavy document, and user experience is best served by prioritizing readability and fast, intuitive navigation to specific topics, rather than a complex dashboard. The smooth-scrolling sidebar allows users to easily jump to the information they need without getting lost in a long wall of text. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Section titles (e.g., "Informações que Coletamos"). Goal: Navigation. Viz/Method: Fixed sidebar navigation menu (`<nav>`). Interaction: On-click smooth scroll to the section anchor. Justification: Standard, intuitive UX for long-form content. Library: Vanilla JS.
+        - Report Info: Section content (paragraphs, lists). Goal: Inform. Viz/Method: Semantic HTML (`<p>`, `<ul>`, `<li>`). Interaction: None. Justification: Maximum readability. Library: N/A.
+        - Report Info: Key concepts (Authentication, Drive Files). Goal: Emphasize. Viz/Method: Unicode icons (e.g., 👤, 📁) next to headings. Interaction: None. Justification: Icons act as quick visual cues, improving scannability without adding complexity. Library: N/A.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" xintegrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Cor da paleta: Serene Professional */
+        :root {
+            --bg-color: #F8F9FA; /* Off-white */
+            --text-primary: #212529; /* Near black for readability */
+            --text-secondary: #6C757D; /* Grey for subtitles */
+            --accent-color: #005A9C; /* Professional blue */
+            --border-color: #DEE2E6; /* Light grey for borders */
+            --nav-bg-color: #FFFFFF;
+        }
+        .bg-main { background-color: var(--bg-color); }
+        .text-main-primary { color: var(--text-primary); }
+        .text-main-secondary { color: var(--text-secondary); }
+        .bg-accent { background-color: var(--accent-color); }
+        .text-accent { color: var(--accent-color); }
+        .border-main { border-color: var(--border-color); }
+        .nav-bg { background-color: var(--nav-bg-color); }
+    </style>
+</head>
+<body class="bg-main text-main-primary">
+
+    <div class="flex min-h-screen">
+        <!-- Navegação Lateral (Sidebar) -->
+        <aside id="sidebar" class="w-64 nav-bg p-6 border-r border-main fixed top-0 left-0 h-full transform -translate-x-full md:translate-x-0 md:block transition-transform duration-300 ease-in-out z-20">
+            <h1 class="text-xl font-bold text-accent mb-8">Navegação</h1>
+            <nav>
+                <ul class="space-y-3">
+                    <li><a href="#section-1" class="font-semibold hover:text-accent transition-colors">1. Informações Coletadas</a></li>
+                    <li><a href="#section-2" class="font-semibold hover:text-accent transition-colors">2. Uso das Informações</a></li>
+                    <li><a href="#section-3" class="font-semibold hover:text-accent transition-colors">3. Partilha de Informações</a></li>
+                    <li><a href="#section-4" class="font-semibold hover:text-accent transition-colors">4. Armazenamento e Segurança</a></li>
+                    <li><a href="#section-5" class="font-semibold hover:text-accent transition-colors">5. Direitos e Escolhas</a></li>
+                    <li><a href="#section-6" class="font-semibold hover:text-accent transition-colors">6. Privacidade Infantil</a></li>
+                    <li><a href="#section-7" class="font-semibold hover:text-accent transition-colors">7. Alterações</a></li>
+                    <li><a href="#section-8" class="font-semibold hover:text-accent transition-colors">8. Contacto</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Botão para abrir sidebar em mobile -->
+        <button id="sidebar-toggle" class="md:hidden fixed top-4 left-4 z-30 p-2 bg-accent text-white rounded-md">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Conteúdo Principal -->
+        <main class="w-full md:ml-64 p-6 sm:p-8 md:p-12">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Cabeçalho -->
+                <header class="mb-12 border-b border-main pb-6">
+                    <h1 class="text-4xl md:text-5xl font-bold text-main-primary mb-2">Política de Privacidade</h1>
+                    <p class="text-main-secondary">Para: <span class="font-semibold text-accent">Public Management OS</span></p>
+                    <p class="text-sm text-main-secondary mt-2">Última atualização: 25 de junho de 2025</p>
+                </header>
+
+                <div class="prose max-w-none text-lg leading-relaxed space-y-8">
+                    <p>Bem-vindo(a) ao Public Management OS (a "Aplicação"). Esta Política de Privacidade explica como as suas informações são recolhidas, utilizadas e geridas quando utiliza a nossa Aplicação. A sua privacidade é de extrema importância para nós.</p>
+
+                    <!-- Seção 1 -->
+                    <section id="section-1" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-database text-accent mr-3"></i> 1. Informações que Coletamos</h2>
+                        <p>A nossa Aplicação foi desenhada para ser o mais privada possível. Não armazenamos os seus dados nos nossos próprios servidores. A coleta de informações limita-se ao estritamente necessário para o funcionamento da Aplicação.</p>
+                        
+                        <div class="mt-6 pl-6 border-l-4 border-accent">
+                            <h3 class="text-2xl font-semibold mb-3 flex items-center"><i class="fab fa-google text-red-500 mr-2"></i> a) Informações de Autenticação via Google:</h3>
+                            <p>Para utilizar a Aplicação, você autentica-se usando a sua Conta Google. Através deste processo, recebemos as seguintes informações do seu perfil Google para o identificar:</p>
+                            <ul class="list-disc list-inside mt-4 space-y-2">
+                                <li><strong>Nome:</strong> Para personalizar a sua experiência na interface.</li>
+                                <li><strong>Endereço de E-mail:</strong> Usado como um identificador único para a sua conta.</li>
+                                <li><strong>Foto do Perfil:</strong> Exibida na interface para uma fácil identificação da sua sessão.</li>
+                            </ul>
+                            <p class="mt-4">Estas informações são geridas pela infraestrutura segura do Google Firebase Authentication e não são armazenadas em servidores próprios.</p>
+                        </div>
+
+                        <div class="mt-8 pl-6 border-l-4 border-accent">
+                            <h3 class="text-2xl font-semibold mb-3 flex items-center"><i class="fab fa-google-drive text-yellow-500 mr-2"></i> b) Informações de Ficheiros do Google Drive:</h3>
+                            <p>A principal funcionalidade da Aplicação é permitir-lhe criar e gerir documentos de trabalho. Estes ficheiros <strong>são guardados diretamente no seu próprio Google Drive</strong>, e não nos nossos servidores. A Aplicação solicita a sua permissão para:</p>
+                            <ul class="list-disc list-inside mt-4 space-y-2">
+                                <li><strong>Aceder e criar uma pasta específica:</strong> A Aplicação criará uma pasta chamada `Public Management OS Files` no seu Google Drive para armazenar todos os ficheiros que você criar.</li>
+                                <li><strong>Ver, editar e criar ficheiros dentro dessa pasta:</strong> A Aplicação apenas irá interagir com os ficheiros que ela mesma criou dentro desta pasta dedicada.</li>
+                                <li class="font-semibold">A Aplicação não tem permissão e não irá aceder, ler ou modificar quaisquer outros ficheiros ou pastas no seu Google Drive.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Seção 2 -->
+                    <section id="section-2" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-cogs text-accent mr-3"></i> 2. Como Usamos as Suas Informações</h2>
+                        <p>Utilizamos as informações recolhidas exclusivamente para os seguintes propósitos:</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li><strong>Fornecer e Manter a Aplicação:</strong> Para o autenticar, permitir que salve o seu trabalho e carregue-o em sessões futuras.</li>
+                            <li><strong>Personalizar a Experiência:</strong> Para exibir o seu nome e foto de perfil na interface do sistema.</li>
+                            <li><strong>Garantir a Funcionalidade:</strong> As permissões do Google Drive são usadas unicamente para que as funções de "Salvar", "Salvar Como" e "Abrir" funcionem conforme esperado, ligando a Aplicação ao seu armazenamento pessoal na nuvem.</li>
+                        </ul>
+                    </section>
+                    
+                    <!-- Seção 3 -->
+                    <section id="section-3" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-share-alt-square text-accent mr-3"></i> 3. Como Partilhamos as Suas Informações</h2>
+                        <p class="font-semibold text-lg">Nós não partilhamos as suas informações pessoais ou de ficheiros com terceiros.</p>
+                        <p class="mt-2">Toda a gestão dos seus dados de trabalho é feita entre o seu navegador e a sua própria Conta Google Drive. A sua informação de perfil é gerida pelo Google. Nós atuamos apenas como uma interface cliente que orquestra essa interação de forma segura.</p>
+                    </section>
+
+                    <!-- Seção 4 -->
+                    <section id="section-4" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-shield-alt text-accent mr-3"></i> 4. Armazenamento e Segurança dos Dados</h2>
+                        <ul class="list-disc list-inside space-y-4">
+                            <li><strong>Dados de Autenticação:</strong> As informações do seu perfil Google são armazenadas e protegidas pela infraestrutura do Google (Firebase Authentication).</li>
+                            <li><strong>Dados de Aplicação (Ficheiros):</strong> Os seus documentos, matrizes, cronogramas e outros trabalhos criados na Aplicação são armazenados de forma segura <strong>no seu Google Drive pessoal</strong>. Você tem controlo total sobre esses ficheiros e pode geri-los (ver, mover, apagar) diretamente através do Google Drive a qualquer momento.</li>
+                        </ul>
+                        <p class="mt-4">Utilizamos protocolos padrão da indústria, como HTTPS e OAuth 2.0, para garantir que a comunicação entre o seu navegador, a nossa Aplicação e os serviços da Google seja segura.</p>
+                    </section>
+
+                    <!-- Seção 5 -->
+                    <section id="section-5" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-user-check text-accent mr-3"></i> 5. Os Seus Direitos e Escolhas</h2>
+                        <p>Você tem controlo total sobre os seus dados.</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                             <li><strong>Acesso e Gestão de Ficheiros:</strong> Pode aceder e gerir todos os seus ficheiros de trabalho diretamente na pasta `Public Management OS Files` no seu Google Drive.</li>
+                             <li><strong>Revogar Permissões:</strong> Pode, a qualquer momento, revogar o acesso da nossa Aplicação à sua Conta Google. Para tal, visite a página de segurança da sua Conta Google em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">myaccount.google.com/permissions</a>, encontre "Public Management OS" na lista e selecione "Remover Acesso". Se o fizer, não conseguirá mais salvar ou carregar ficheiros através da Aplicação.</li>
+                             <li><strong>Eliminação de Dados:</strong> Para eliminar os seus dados, basta apagar os ficheiros ou a pasta `Public Management OS Files` do seu Google Drive e revogar as permissões da Aplicação conforme descrito acima.</li>
+                        </ul>
+                    </section>
+                    
+                    <!-- Seção 6 -->
+                    <section id="section-6" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-child text-accent mr-3"></i> 6. Privacidade Infantil</h2>
+                        <p>A nossa Aplicação não se destina a indivíduos com idade inferior a 13 anos (ou a idade de consentimento digital relevante no seu país). Não recolhemos intencionalmente informações de crianças.</p>
+                    </section>
+                    
+                    <!-- Seção 7 -->
+                    <section id="section-7" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-sync-alt text-accent mr-3"></i> 7. Alterações a Esta Política de Privacidade</h2>
+                        <p>Podemos atualizar a nossa Política de Privacidade ocasionalmente. Iremos notificá-lo(a) sobre quaisquer alterações, publicando a nova Política de Privacidade nesta página e atualizando a data da "Última atualização" no topo.</p>
+                    </section>
+
+                    <!-- Seção 8 -->
+                    <section id="section-8" class="pt-8">
+                        <h2 class="text-3xl font-bold text-main-primary mb-4 flex items-center"><i class="fas fa-envelope text-accent mr-3"></i> 8. Contacto</h2>
+                        <p>Se tiver alguma dúvida sobre esta Política de Privacidade, por favor, entre em contacto connosco através de:</p>
+                        <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                            <p class="font-semibold">Leonardo Verona</p>
+                            <p class="text-main-secondary">leomarques20@gmail.com</p>
+                            <a href="https://leonardomverona.github.io/PublicManagementOS/" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">https://leonardomverona.github.io/PublicManagementOS/</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const mainContent = document.querySelector('main');
+
+            // Toggle sidebar em mobile
+            sidebarToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                sidebar.classList.toggle('-translate-x-full');
+            });
+
+            // Fechar sidebar ao clicar fora em mobile
+            document.addEventListener('click', function(e) {
+                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Smooth scroll para âncoras da navegação
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+
+                    // Fechar sidebar após clicar num link em mobile
+                    if (window.innerWidth < 768) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
